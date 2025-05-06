@@ -1,0 +1,9 @@
+# DVC pipeline definition
+stages:
+  train:
+    cmd: python model/train.py
+    deps:
+      - model/train.py
+      - data/processed
+    outs:
+      - model/model.pkl
